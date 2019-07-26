@@ -13,7 +13,7 @@ class GlobalLogger implements LoggerInterface
 		$this->file = $file;
 	}
 
-	public function log($level, $message, $context = []) {
+	public function log($level, $message, array $context = []) {
 		file_put_contents($this->file, date("r") . ": [" . $level . "]: " . $message . PHP_EOL, FILE_APPEND);
 	}
 	
